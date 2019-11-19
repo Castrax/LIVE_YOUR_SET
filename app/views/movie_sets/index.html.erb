@@ -1,44 +1,19 @@
 <div class="container">
-<h1>Lorem ipsum</h1>
-  <div class="cards">
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Name</h2>
-          <p>Location</p>
+  <div class="main">
+  <h2>SETS OF YOUR DREAM</h1>
+    <div class="cards">
+      <% @movie_sets.each do |movie_set| %>
+      <div class="card-trip">
+          <%= link_to movie_set_path(movie_set) do %>
+          <img class="card-trip-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= movie_set.title %></h2>
+            <p><%= movie_set.address %></p>
+          </div>
+          <% end %>
         </div>
-      </div>
     </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Name</h2>
-          <p>Location</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Name</h2>
-          <p>Location</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Name</h2>
-          <p>Location</p>
-        </div>
-      </div>
-    </div>
-
   </div>
+</div>
