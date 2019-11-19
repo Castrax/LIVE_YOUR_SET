@@ -22,21 +22,28 @@
   </a>
 </div>
 
-<div id="show-movie-set-title">
-  <h2><%= @movie_set.title %></h2>
-</div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div id="show-movie-set-title">
+        <h2><%= @movie_set.title %></h2>
+      </div>
 
-<div id="show-movie-set-description">
-  <p><%= @movie_set.description %></p>
-</div>
-<div>
-  <p><%= @movie_set.media_name %></p>
-</div>
-<div>
-  <p><%= @movie_set.address %></p>
-</div>
-<div>
-  <p><%= @movie_set.price_per_day %></p>
-</div>
+      <div id="show-movie-set-description">
+        <p><%= @movie_set.description %></p>
+      </div>
+    </div>
 
+    <div class="col-sm-4 d">
+      <div class="card p-3 text-center">
+        <div>
+          <p><strong><%= @movie_set.media_name %></strong></p>
+        </div>
+        <div>
+          <p><%= @movie_set.price_per_day %>$ / day</p>
+        </div>
+        <%= link_to "Book", dashboard_path(@booking), class: "btn btn-flat" %>
+      </div>
+    </div>
+  </div>
+</div>
 
