@@ -15,7 +15,10 @@
       </button>
     </div>
   <% end %>
-
+  <%= simple_form_for :search, method: :get do |f| %>
+    <%= f.input :dates, input_html: { class: "datepicker" } %>
+    <%= f.submit "Go", class: "btn btn-primary" %>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
