@@ -1,7 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <%= @bookings %>
+      <div class="card-dashboard">
+        <% @bookings.each do |booking| %>
+          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+          <div class="card-dashboard-infos">
+            <h2><%= booking.movie_set.title %></h2>
+            <p><%= booking.start_date %></p>
+            <p><%= booking.end_date %></p>
+            <p><%= booking.total_price %></p>
+            <p><%= booking.status %></p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
