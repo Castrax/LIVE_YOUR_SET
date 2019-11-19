@@ -44,17 +44,6 @@ got_3 = URI.open("https://www.telegraph.co.uk/content/dam/Travel/Destinations/Eu
 ms3.photos.attach(io: got_3, filename: 'got-3.jpg', content_type: 'image/jpg')
 ms3.save
 
-# u4 = User.create(first_name: "Jon", last_name: "Snow", email: "jon@snow.com", password: "testtest")
-
-# ms4 = MovieSet.new(title: "Game of Thrones Kingdom", description: "Be the king you've always wanted to be", media_name: "Game of Thrones", address: "Westeros", price_per_day: 3000, user_id: u4.id)
-# lotr_1 = URI.open("https://blogvoyages.fr/wp-content/uploads/2018/06/hobbiton-movie-set-1.jpg")
-# ms4.photos.attach(io: lotr_1, filename: 'lotr-1.jpg', content_type: 'image/jpg')
-# lotr_2 = URI.open("https://blogvoyages.fr/wp-content/uploads/2018/06/hobbiton-movie-set.jpg")
-# ms4.photos.attach(io: lotr_2, filename: 'lotr-2.jpg', content_type: 'image/jpg')
-# lotr_3 = URI.open("https://blogvoyages.fr/wp-content/uploads/2018/06/hobbiton-movieset.jpg")
-# ms4.photos.attach(io: lotr_3, filename: 'lotr-3.jpg', content_type: 'image/jpg')
-# ms4.save
-
 u4 = User.create(first_name: "Jack", last_name: "Dawson", email: "jack@dawson.com", password: "testtest")
 
 ms4 = MovieSet.new(title: "Wet cabin on an historic boat", description: "Try to escape quicker than everyone else to stay alive!", media_name: "Titanic", address: "Soon very deep in the ocean", price_per_day: 1000, user_id: u4.id)
@@ -77,16 +66,38 @@ ap_3 = URI.open("https://www.messortiesculture.com/storage/tourcovers/3739.jpg?1
 ms5.photos.attach(io: ap_3, filename: 'ap-3.jpg', content_type: 'image/jpg')
 ms5.save
 
-u6 = User.create(first_name: "Marie-Antoinette", last_name: "d'Autriche", email: "marie@antoinette.com", password: "testtest")
+u6 = User.create(first_name: "Frodon", last_name: "Sacquet", email: "frodon@sacquet.com", password: "testtest")
 
-ms6 = MovieSet.new(title: "French royal set", description: "Be the Queen", address: "Versailles", price_per_day: 4000, user_id: u6.id)
-ma_1 = URI.open("https://id14withmamquevedo.files.wordpress.com/2012/03/palace_of_versailles_-_paris.jpg")
-ms6.photos.attach(io: ma_1, filename: 'ma-1.jpg', content_type: 'image/jpg')
-ma_2 = URI.open("http://scd.en.rfi.fr/sites/english.filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/vaux_le_vicomte_fait_son_cinema_exhibition_sept-_nov_2018.png")
-ms6.photos.attach(io: ma_2, filename: 'ma-2.jpg', content_type: 'image/jpg')
-ma_3 = URI.open("https://static.lexpress.fr/medias_611/w_480,h_270,c_fill,g_north/v1406717680/trianon-1_312931.jpg")
-ms6.photos.attach(io: ma_3, filename: 'ma-3.jpg', content_type: 'image/jpg')
+ms6 = MovieSet.new(title: "Dwarf house", description: "Be the dwarf you've always wanted to be", media_name: "Lord Of The Rings", address: "New-Zeland", price_per_day: 3000, user_id: u6.id)
+lotr_1 = URI.open("https://blogvoyages.fr/wp-content/uploads/2018/06/hobbiton-movie-set-1.jpg")
+ms6.photos.attach(io: lotr_1, filename: 'lotr-1.jpg', content_type: 'image/jpg')
+lotr_2 = URI.open("https://blogvoyages.fr/wp-content/uploads/2018/06/hobbiton-movie-set.jpg")
+ms6.photos.attach(io: lotr_2, filename: 'lotr-2.jpg', content_type: 'image/jpg')
+lotr_3 = URI.open("https://blogvoyages.fr/wp-content/uploads/2018/06/hobbiton-movieset.jpg")
+ms6.photos.attach(io: lotr_3, filename: 'lotr-3.jpg', content_type: 'image/jpg')
 ms6.save
+
+u7 = User.create(first_name: "Marie", last_name: "Antoinette", email: "marie@antoinette.com", password: "testtest")
+
+ms7 = MovieSet.new(title: "Historic french castle", description: "Always wanted to be a Queen?", media_name: "Marie-Antoinette", address: "Versailles", price_per_day: 3000, user_id: u7.id)
+ma_1 = URI.open("https://id14withmamquevedo.files.wordpress.com/2012/03/palace_of_versailles_-_paris.jpg")
+ms7.photos.attach(io: ma_1, filename: 'ma-1.jpg', content_type: 'image/jpg')
+ma_2 = URI.open("http://scd.en.rfi.fr/sites/english.filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/vaux_le_vicomte_fait_son_cinema_exhibition_sept-_nov_2018.png")
+ms7.photos.attach(io: ma_2, filename: 'ma-2.jpg', content_type: 'image/jpg')
+ma_3 = URI.open("https://static.lexpress.fr/medias_611/w_480,h_270,c_fill,g_north/v1406717680/trianon-1_312931.jpg")
+ms7.photos.attach(io: ma_3, filename: 'ma-3.jpg', content_type: 'image/jpg')
+ms7.save
+
+u8 = User.create(first_name: "Bruce", last_name: "Wayne", email: "bruce@wayne.com", password: "testtest")
+
+ms8 = MovieSet.new(title: "Batman city", description: "Fictional city appearing in American comic books published by DC Comics, best known as the home of Batman. The city was first identified as Batman's place of residence in Batman #4 (December 1940) and has since been the primary setting for stories featuring the character.", media_name: "Batman", address: "Gotham city", price_per_day: 3000, user_id: u8.id)
+batman_1 = URI.open("https://static.hitek.fr/img/actualite/2018/03/02/fb_gotham-city-batman-setting-dc-1024x575.jpg")
+ms8.photos.attach(io: batman_1, filename: 'batman-1.jpg', content_type: 'image/jpg')
+batman_2 = URI.open("https://images.unsplash.com/photo-1560982014-81fd498f57e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80")
+ms8.photos.attach(io: batman_2, filename: 'batman-2.jpg', content_type: 'image/jpg')
+batman_3 = URI.open("https://static.hitek.fr/img/actualite/2018/03/02/fb_gotham-city-batman-setting-dc-1024x575.jpg")
+ms8.photos.attach(io: batman_3, filename: 'batman-3.jpg', content_type: 'image/jpg')
+ms8.save
 
 
 
