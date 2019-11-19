@@ -5,5 +5,6 @@ class MovieSetsController < ApplicationController
 
   def show
     @movie_set = MovieSet.find(params[:id])
+    @booking = Booking.new
   end
 end
