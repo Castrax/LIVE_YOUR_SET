@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'movie_sets/index'
+  # get 'movie_sets/show'
   devise_for :users
   root to: 'pages#home'
   resources :movie_sets, only: [:index, :show]
