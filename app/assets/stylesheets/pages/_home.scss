@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+
+.main {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.divider {
+  text-align: center;
+}
+
+.divider h2, p {
+  margin: 0;
+}
+
+.divider p {
+  color: $blue-lys;
+  font-size: small;
+}
+
+.card-deck {
+  margin-top: 2rem;
+}
+
+.flag-1, .flag-2, .flag-3 {
+  width: 70px;
+  height: 70px;
+  background-color: aquamarine;
+  border-radius: 50px;
+  position: absolute;
+  top: -20px;
+  right: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
