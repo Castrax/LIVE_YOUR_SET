@@ -2,18 +2,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 30px;
 }
 
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 280px;
 }
 
-.card-trip > img {
-  height: 200px;
+.card-trip .card-trip-img {
+  height: 150px;
   width: 100%;
-  object-fit: cover;
 }
 
 .card-trip h2 {
@@ -25,7 +26,7 @@
 .card-trip p {
   font-size: 12px;
   opacity: .7;
-  margin: 0;
+  margin: 10px 0 0 0;
 }
 
 .card-trip .card-trip-infos {
@@ -67,6 +68,6 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr1fr;
   }
 }
