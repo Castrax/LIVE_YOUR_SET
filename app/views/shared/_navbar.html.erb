@@ -15,10 +15,6 @@
         </button>
       </div>
     <% end %>
-    <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
-      <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker" } %>
-      <%= f.submit "Go", class: "btn btn-primary" %>
-    <% end %>
 
       <% if user_signed_in? %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

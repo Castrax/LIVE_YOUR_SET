@@ -30,15 +30,24 @@
       </div>
     </div>
 
-    <div class="col-sm-4 d">
+    <div class="col-sm-4 d" style="border-radius: 4px">
       <div class="card p-3 text-center">
-        <div>
-          <p><strong><%= @movie_set.media_name %></strong></p>
+        <div class="p-2 my-3">
+          <p style="text-transform: uppercase;"><strong><em><%= @movie_set.media_name %></strong></em></p>
         </div>
-        <div>
+        <div class="p-2 my-3">
           <p><%= @movie_set.price_per_day %>$ / day</p>
         </div>
-        <%= link_to "Book", dashboard_path(@booking), class: "btn btn-flat" %>
+        <div class="p-2 my-3">
+          <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
+            <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
+            <%= f.submit "Go", class: "btn btn-primary" %>
+          <% end %>
+          <div class="p-2 mt-3">
+            <p>Total: <%= @movie_set.price_per_day * 5 %>$</p>
+          </div>
+        </div>
+        <%= link_to "Book", dashboard_path(@booking), class: "btn btn-primary btn-block mb-3" %>
       </div>
     </div>
   </div>
