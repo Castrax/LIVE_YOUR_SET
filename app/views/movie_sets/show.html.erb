@@ -63,15 +63,14 @@
           <p style="text-transform: uppercase;"><strong><em><%= @movie_set.media_name %></strong></em></p>
         </div>
         <div class="p-2 my-3">
-          <p><%= @movie_set.price_per_day %>$ / day</p>
+          <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
         </div>
         <div class="p-2 my-3">
           <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
             <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
-            <%= f.submit "Go", class: "btn btn-primary" %>
           <% end %>
           <div class="p-2 mt-3">
-            <p>Total: <%= @movie_set.price_per_day * 5 %>$</p>
+            <p><strong>Total: <span id="total-price"></span>$</strong></p>
           </div>
         </div>
         <%= link_to "Book", dashboard_path(@booking), class: "btn btn-primary btn-block mb-3" %>
