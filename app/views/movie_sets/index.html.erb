@@ -4,18 +4,29 @@
       <h2>SETS</h2>
       <p>of your dreams</p>
     </div>
-    <div class="cards">
-      <% @movie_sets.each do |movie_set| %>
-        <div class="card-trip">
-            <%= link_to movie_set_path(movie_set) do %>
-            <%= cl_image_tag movie_set.photos.first.key, class: "card-trip-img" %>
-            <% end %>
-          <div class="card-trip-infos">
-            <h2><%= movie_set.title %></h2>
-            <p><%= movie_set.address %></p>
+    <div class="content">
+      <div class="cards">
+        <% @movie_sets.each do |movie_set| %>
+          <div class="card-trip">
+              <%= link_to movie_set_path(movie_set) do %>
+              <%= cl_image_tag movie_set.photos.first.key, class: "card-trip-img" %>
+              <% end %>
+            <div class="card-trip-infos">
+              <h2><%= movie_set.title %></h2>
+              <p><%= movie_set.address %></p>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+      <div class="map">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
     </div>
   </div>
 </div>

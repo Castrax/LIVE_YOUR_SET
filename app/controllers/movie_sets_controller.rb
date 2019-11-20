@@ -5,10 +5,16 @@ class MovieSetsController < ApplicationController
     if params[:search]
       @search = params[:search][:query]
       @title = ""
-      @movie_sets = MovieSet.where("title ILIKE ? OR media_name ILIKE ? OR address ILIKE ?", "%#{@search}%", "%#{@search}%", "%#{@search}%")
+      @movie_sets = MovieSet.geocoded.where("title ILIKE ? OR media_name ILIKE ? OR address ILIKE ?", "%#{@search}%", "%#{@search}%", "%#{@search}%")
     else
-      @movie_sets = MovieSet.all
+      @movie_sets = MovieSet.geocoded
     end
+    
+    @markers = @movie_sets.map do |movie|
+      {
+        lat: movie.latitude,
+        lng: movie.longitude
+      }
   end
 
   def show
