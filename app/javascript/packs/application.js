@@ -13,8 +13,9 @@ const reservation = document.querySelector(".datepicker")
 const price_per_day = document.querySelector("#price-per-day")
 const total = document.querySelector("#total-price")
 
-reservation.addEventListener("keydown", range =>{
-  const datestring = range.explicitOriginalTarget.value;
+reservation.addEventListener("change", range =>{
+  console.log("range :", range);
+  const datestring = range.target.value;
   const datearray = datestring.split(" to ");
   const start_date = new Date(datearray[0]);
   const end_date = new Date(datearray[1]);
