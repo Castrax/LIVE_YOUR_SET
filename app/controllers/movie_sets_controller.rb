@@ -7,7 +7,14 @@ class MovieSetsController < ApplicationController
       @title = ""
       @movie_sets = MovieSet.where("title ILIKE ? OR media_name ILIKE ? OR address ILIKE ?", "%#{@search}%", "%#{@search}%", "%#{@search}%")
     else
-      @movie_sets = MovieSet.all
+      @movie_sets = MovieSet.geocoded
+    end
+
+    @markers = @movie_sets.map do |movie|
+      {
+        lat: movie.latitude,
+        lng: movie.longitude
+      }
     end
   end
 
@@ -16,7 +23,10 @@ class MovieSetsController < ApplicationController
     @booking = Booking.new
   end
 
+  private
+
   def movie_set_params
     params.require(:movie_set).permit(:title, :address)
   end
 end
+

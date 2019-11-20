@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="card-dashboard">
-        <% @bookings.each do |booking| %>
+      <% @bookings.each do |booking| %>
+        <div class="card-dashboard">
           <%= cl_image_tag booking.movie_set.photos.first.key %>
           <div class="justify-dashboard">
             <div class="card-dashboard-infos">
@@ -10,16 +10,20 @@
               <div class="infos">
                 <div class="dates">
                   <p>Du <strong><%= booking.start_date %></strong> au <strong><%= booking.end_date %></strong></p>
-                  <p><%= booking.total_price %></p>
+                  <span class="total_price"><%= booking.total_price %> €</span>
                 </div>
               </div>
             </div>
             <div class="status">
-              <span class="badge badge-secondary"><%= booking.status %></span>
+              <% if booking.status == "upcoming" %>
+                <span class="badge badge-secondary"><%= booking.status %></span>
+              <% else %>
+                <span class="badge badge-primary"><%= booking.status %></span>
+              <% end %>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

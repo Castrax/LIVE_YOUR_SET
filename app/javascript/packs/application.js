@@ -1,6 +1,7 @@
 import "bootstrap";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const datepickers = flatpickr(".datepicker", {
   mode: "range",
@@ -24,3 +25,7 @@ reservation.addEventListener("keydown", range =>{
   const totalcalculation = period * price_per_day.innerText
   total.innerText = totalcalculation;
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();

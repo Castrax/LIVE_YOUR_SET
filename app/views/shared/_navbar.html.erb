@@ -1,16 +1,23 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container">
-  <%= link_to root_path, class: "navbar-brand" do %>
-     <%= cl_image_tag("logo_ordugd", width: 80, height: 50) %>
-  <% end %>
+    <div class="logo-typo">
+      <%= link_to root_path, class: "navbar-brand" do %>
+         <i class="fas fa-film"></i>
+         <h1 id="logo">Live your set</h1>
+      <% end %>
+    </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%= simple_form_for :search, url: movie_sets_path, method: :get do |f| %>
       <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <% if params[:search] %>
+          <input class="form-control string required" type="text" id="search_query" value="<%= params[:search][:query] %>" />
+          <% else %>
+          <input class="form-control string required" type="text" id="search_query" value=" <%= params[:query] %>" />
+        <% end %>
         <button name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search"></i> Search
         </button>
@@ -24,10 +31,8 @@
               <%= link_to "Bookings", dashboard_path, class: "nav-link" %>
             </li>
             <li class="nav-item dropdown">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "https://i2.wp.com/therighthairstyles.com/wp-content/uploads/2014/03/8-choppy-collarbone-cut.jpg?zoom=2.625&resize=392%2C392&ssl=1", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>
@@ -47,4 +52,5 @@
     <% end %>
   </div>
 </div>
+
 
