@@ -9,7 +9,8 @@ const datepickers = flatpickr(".datepicker", {
   minDate: "today",
 });
 
-const reservation = document.querySelector(".datepicker")
+if (document.querySelector(".datepicker")) {
+  const reservation = document.querySelector(".datepicker")
 const price_per_day = document.querySelector("#price-per-day")
 const total = document.querySelector("#total-price")
 
@@ -26,6 +27,9 @@ reservation.addEventListener("change", range =>{
   const totalcalculation = period * price_per_day.innerText
   total.innerText = totalcalculation;
 });
+
+
+}
 
 import { initMapbox } from '../plugins/init_mapbox';
 
