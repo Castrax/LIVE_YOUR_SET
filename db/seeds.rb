@@ -281,5 +281,8 @@ batman_1 = URI.open("https://static.hitek.fr/img/actualite/2018/03/02/fb_gotham-
 ms24.photos.attach(io: batman_1, filename: 'batman-1.jpg', content_type: 'image/jpg')
 ms24.save
 
+b1 = Booking.create(start_date: Date.today, end_date: Date.today + 8, total_price: 1200, status: "upcoming", user_id: 21, movie_set_id: 21)
+b2 = Booking.create(start_date: Date.new(2018,2,3), end_date: Date.new(2018,3,3), total_price: 800, status: "past", user_id: 21, movie_set_id: 23)
+b3 = Booking.create(start_date: Date.new(2016,6,23), end_date: Date.new(2016,7,3), total_price: 2100, status: "past", user_id: 21, movie_set_id: 18)
 
 puts "Seeded"
