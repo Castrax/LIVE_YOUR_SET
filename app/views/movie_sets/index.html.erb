@@ -8,7 +8,7 @@
       <div class="cards">
         <% @movie_sets.each do |movie_set| %>
           <div class="card-trip">
-              <%= link_to movie_set_path(movie_set) do %>
+              <%= link_to movie_set_path(movie_set), { query: @search } do %>
               <%= cl_image_tag movie_set.photos.first.key, class: "card-trip-img" %>
               <% end %>
             <div class="card-trip-infos">

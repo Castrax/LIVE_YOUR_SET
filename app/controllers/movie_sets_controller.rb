@@ -23,6 +23,8 @@ class MovieSetsController < ApplicationController
     @booking = Booking.new
   end
 
+  private
+
   def movie_set_params
     params.require(:movie_set).permit(:title, :address)
   end
