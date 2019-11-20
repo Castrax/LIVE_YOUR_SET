@@ -9,13 +9,14 @@ const datepickers = flatpickr(".datepicker", {
   minDate: "today",
 });
 
+
+// const reservation = document.querySelector(".datepicker")
+
+// reservation.addEventListener("change", range =>{
+//   console.log(range.innerText);
+//   // range.nextElementSibling.innerText = 'Bingo!';
+// });
+
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
-
-const reservation = document.querySelector(".datepicker")
-
-reservation.addEventListener("change", range =>{
-  console.log(range.innerText);
-  // range.nextElementSibling.innerText = 'Bingo!';
-});

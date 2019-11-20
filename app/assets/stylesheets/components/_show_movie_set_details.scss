@@ -6,8 +6,12 @@
   // width: 1000px;
 }
 
-.fas {
+.fa-map-marked-alt {
   margin-right: 30px;
+}
+
+
+.fas {
   margin-bottom: 30px;
 }
 
@@ -25,8 +29,19 @@
 .box-description {
   display: flex;
   margin-bottom: 30px;
+  text-align: center;
+
 }
 
 .description-card {
   margin-right: 30px;
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.description-icon {
+  font-size: 2em;
+
 }
