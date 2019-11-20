@@ -16,7 +16,7 @@
         <% if params[:search] %>
           <input class="form-control string required" type="text" id="search_query" value="<%= params[:search][:query] %>" />
           <% else %>
-          <input class="form-control string required" type="text" id="search_query" />
+          <input class="form-control string required" type="text" id="search_query" value=" <%= params[:query] %>" />
         <% end %>
         <button name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search"></i> Search
