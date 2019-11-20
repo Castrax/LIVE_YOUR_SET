@@ -1,7 +1,8 @@
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to "movies_sets_path", class: "navbar-brand d-flex align-items-center" do %>
-      <%= cl_image_tag("https://res.cloudinary.com/ddlesqeup/image/upload/v1574172582/logo_transparent_xiirrx.png", :width=>300, :height=>300, :crop=>"fit") %>
-    <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container">
+  <%= link_to root_path, class: "navbar-brand" do %>
+     <%= cl_image_tag("logo_ordugd", width: 80, height: 50) %>
+  <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,4 +46,5 @@
       </div>
     <% end %>
   </div>
+</div>
 
