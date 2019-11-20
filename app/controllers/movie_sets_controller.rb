@@ -9,12 +9,13 @@ class MovieSetsController < ApplicationController
     else
       @movie_sets = MovieSet.geocoded
     end
-    
+
     @markers = @movie_sets.map do |movie|
       {
         lat: movie.latitude,
         lng: movie.longitude
       }
+    end
   end
 
   def show
