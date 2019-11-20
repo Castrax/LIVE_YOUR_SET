@@ -1,5 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(35,53,103,0.4)), url(https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1340&q=80);">
   <div class="container">
+    <%= link_to root_path do %>
+     <%= cl_image_tag("logo_ordugd", width: 80, height: 50) %>
+    <% end %>
     <h1>Immerse yourself in the film or series of your choice</h1>
     <p>Live again the greatest scenes of your life!</p>
     <div class="search-box">
