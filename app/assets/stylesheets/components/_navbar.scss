@@ -7,6 +7,20 @@
   flex-grow: 0;
 }
 
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
+.fa-film {
+  color: $navy-blue-lys;
+  margin: 0 1rem 0 0 !important;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#logo {
+  font-size: 2rem;
+  font-weight: 500;
+  color: $navy-blue-lys;
+  margin: 0;
+}
