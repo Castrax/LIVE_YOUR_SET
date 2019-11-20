@@ -5,7 +5,7 @@ class MovieSetsController < ApplicationController
     if params[:search]
       @search = params[:search][:query]
       @title = ""
-      @movie_sets = MovieSet.geocoded.where("title ILIKE ? OR media_name ILIKE ? OR address ILIKE ?", "%#{@search}%", "%#{@search}%", "%#{@search}%")
+      @movie_sets = MovieSet.where("title ILIKE ? OR media_name ILIKE ? OR address ILIKE ?", "%#{@search}%", "%#{@search}%", "%#{@search}%")
     else
       @movie_sets = MovieSet.geocoded
     end
@@ -27,3 +27,4 @@ class MovieSetsController < ApplicationController
     params.require(:movie_set).permit(:title, :address)
   end
 end
+
