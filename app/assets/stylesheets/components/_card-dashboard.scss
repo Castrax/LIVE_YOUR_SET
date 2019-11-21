@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   margin-top: 1rem;
+  width: 90%;
 }
 
 .card-dashboard img {
@@ -57,3 +58,19 @@
   background-color: $pink-lys;
 }
 
+.card-dashboard-infos-movies {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-global {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.card-update {
+  margin-left: 1rem;
+}

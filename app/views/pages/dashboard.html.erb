@@ -14,16 +14,26 @@
         <div class="row">
           <div class="col">
             <% @movie_sets.each do |m| %>
-              <%= link_to movie_set_path(m) do %>
+              <div class="card-global">
                 <div class="card-dashboard">
-                  <%= cl_image_tag m.photos.first.key %>
-                  <div class="justify-dashboard">
-                    <div class="card-dashboard-infos">
-                      <h2><%= m.title %></h2>
+                  <%= link_to movie_set_path(m) do %>
+                    <%= cl_image_tag m.photos.first.key %>
+                    <div class="justify-dashboard">
+                      <div class="card-dashboard-infos">
+                        <h2><%= m.title %></h2>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
-              <% end %>
+                <div class="card-update">
+                  <%= link_to movie_set_path(m), method: :delete, data: { confirm: "Are you sure?"} do %>
+                    <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                  <%= link_to edit_movie_set_path(m) do %>
+                    <p><i class="fas fa-edit"></i></p>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
           </div>
         </div>

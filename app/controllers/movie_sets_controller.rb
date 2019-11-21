@@ -44,6 +44,12 @@ class MovieSetsController < ApplicationController
     redirect_to movie_set_path(@movie_set)
   end
 
+  def destroy
+    @movie_set = MovieSet.find(params[:id])
+    @movie_set.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def movie_set_params
