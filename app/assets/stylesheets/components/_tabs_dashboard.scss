@@ -1,5 +1,16 @@
-.custom-tabs {
-
+.tab-link-custom {
+  background-color: #f4f4f4 !important;
+  padding: 1rem 0rem 0.5rem 0rem;
+  margin-right: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 70%;
+  font-family: $headers-font;
+  color: $navy-blue-lys !important;
+  &.active {
+  opacity: 100%;
+  border-bottom: 4px solid;
+  border-color: $green;
+  }
 }
 
-// TO DO CUSTOM TABS DASHBOARD
