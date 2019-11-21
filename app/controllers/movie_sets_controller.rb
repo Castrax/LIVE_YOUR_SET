@@ -23,10 +23,20 @@ class MovieSetsController < ApplicationController
     @booking = Booking.new
   end
 
+  def new
+    @movie_set = MovieSet.new(params[:movie_set])
+  end
+
+  def create
+    @movie_set = MovieSet.new(movie_set_params)
+    @movie_set.user_id = current_user.id
+    @movie_set.save
+    redirect_to movie_set_path(@movie_set), alert: 'Well done !'
+  end
+
   private
 
   def movie_set_params
-    params.require(:movie_set).permit(:title, :address)
+    params.require(:movie_set).permit(:title, :address, :description, :media_name, :price_per_day, photos: [])
   end
 end
-

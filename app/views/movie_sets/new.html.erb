@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="header">
+        <h2>Hello Mathilde</h2>
+        <p>Please add a new movie set:</p>
+      </div>
+      <div class="new-set">
+        <%= simple_form_for @movie_set, defaults: { input_html: { class: 'default_class' } } do |f| %>
+          <%= f.input :title, input_html: { class: 'special' } %>
+          <%= f.input :description, input_html: { maxlength: 500 } %>
+          <%= f.input :media_name %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.input :address %>
+          <%= f.input :price_per_day %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
