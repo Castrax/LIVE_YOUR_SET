@@ -13,7 +13,8 @@ class MovieSetsController < ApplicationController
     @markers = @movie_sets.map do |movie|
       {
         lat: movie.latitude,
-        lng: movie.longitude
+        lng: movie.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { movie_set: movie })
       }
     end
   end

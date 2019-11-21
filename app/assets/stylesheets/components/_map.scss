@@ -53,3 +53,25 @@
     display: block;
   }
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.mapboxgl-popup-content {
+  font-size: 12px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(200, 200, 200);
+}
+
+.mapboxgl-popup-content a {
+  color: $navy-blue-lys;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.mapboxgl-popup-content a:hover {
+  text-decoration: none;
+}
