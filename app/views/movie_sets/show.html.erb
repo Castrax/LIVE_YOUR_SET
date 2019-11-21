@@ -7,7 +7,7 @@
       <div class="carousel-inner">
         <% @movie_set.photos.each do |photo|%>
           <div class="carousel-item <%= "active" if photo == @movie_set.photos.first %>">
-            <%= cl_image_tag photo.key, class: "d-block w-100", style: "height: 400px;" %>
+            <%= cl_image_tag photo.key, class: "d-block w-100", style:"height: 350px"%>
           </div>
         <% end %>
       </div>

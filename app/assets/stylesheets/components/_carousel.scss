@@ -1,5 +1,5 @@
 #carousel-show-movie-set {
-  width: 600px;
+  width: 100%;
   margin: 0 auto 70px auto;
 
 }
@@ -21,7 +21,7 @@ Removes white gap between slides
 Forces image to be 100% width and not max width of 100%
 */
 .carousel-item .img-fluid {
-  height:auto;
+  height:300px;
 }
 
 /*

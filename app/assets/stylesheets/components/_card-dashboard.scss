@@ -74,3 +74,15 @@
 .card-update {
   margin-left: 1rem;
 }
+
+.movies {
+  display: grid;
+  grid-template-columns: 18rem 18rem 18rem;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  margin: auto;
+}
+
+#pills-tab {
+  margin-top: 1rem;
+}
