@@ -23,14 +23,17 @@
     </div>
   </div>
 
-<div class="container">
+<div class="contcont">
     <div class="row">
       <div class="col-sm-8">
         <div id="show-movie-set-title">
-          <h1><%= @movie_set.title %></h1>
+          <h1><%= @movie_set.title.capitalize %></h1>
         </div>
         <div id="show-movie-set-address">
           <p><i class="fas fa-map-marked-alt"></i><%=  @movie_set.address %></p>
+        </div>
+        <div id="show-movie-set-media-name">
+          <p><i class="fas fa-heart"></i><%=  @movie_set.media_name %></p>
         </div>
         <div class="container box-description">
           <div class="card description-card">
@@ -55,23 +58,23 @@
         </div>
       </div>
 
-    <div class="col-sm-4" style="border-radius: 4px">
-      <div class="card p-3 text-center">
-        <div class="p-2 my-3">
-          <p style="text-transform: uppercase;"><strong><em><%= @movie_set.media_name %></strong></em></p>
+    <div class="col-sm-4">
+      <div class="card booking-card">
+        <div class="booking-card-item">
+          <p style="text-transform: uppercase;"><strong><em><%= @movie_set.title %></strong></em></p>
         </div>
-        <div class="p-2 my-3">
+        <div class="booking-card-item">
           <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
         </div>
-        <div class="p-2 my-3">
+        <div class="datedate">
           <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
             <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
           <% end %>
-          <div class="p-2 mt-3">
+        </div>
+          <div class="booking-card-item">
             <p><strong>Total: <span id="total-price"></span>$</strong></p>
           </div>
-        </div>
-        <%= link_to "Book", dashboard_path(@booking), class: "btn btn-primary btn-block mb-3" %>
+        <%= link_to "Book", dashboard_path(@booking), class: "btn btn-flat btn-block mb-3" %>
       </div>
     </div>
   </div>
