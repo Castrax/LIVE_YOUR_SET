@@ -24,3 +24,16 @@
   color: $navy-blue-lys;
   margin: 0;
 }
+
+.container-hp {
+  display: flex;
+  justify-content: space-between;
+  width: 2000px;
+}
+
+#logo-white {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+}
