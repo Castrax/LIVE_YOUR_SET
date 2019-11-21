@@ -11,11 +11,7 @@
   </head>
   <body>
     <%= render 'shared/notice' %>
-      <% unless action_name == 'home' %>
-        <%= render 'shared/navbar' %>
-      <% else %>
-        <%= render 'shared/navbar-home' %>
-    <% end %>
+    <%= render 'shared/navbar' %>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>

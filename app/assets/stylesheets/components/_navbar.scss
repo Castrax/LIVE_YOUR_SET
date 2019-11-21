@@ -12,6 +12,10 @@
   margin: 0 1rem 0 0 !important;
 }
 
+.white {
+  color: white;
+}
+
 .navbar-brand {
   display: flex;
   justify-content: left;
@@ -25,15 +29,24 @@
   margin: 0;
 }
 
-.container-hp {
-  display: flex;
-  justify-content: space-between;
-  width: 2000px;
-}
-
 #logo-white {
   font-size: 2rem;
   font-weight: 500;
   color: white;
   margin: 0;
 }
+
+.container-hp {
+  display: flex;
+  justify-content: space-between;
+  width: 2000px;
+}
+
+.navbar-white .nav-link {
+  color: white !important;
+}
+
+.navbar-white .navbar-light .navbar-nav .nav-link:hover {
+  color: white !important;
+}
+
