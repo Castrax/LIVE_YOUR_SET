@@ -34,6 +34,12 @@ class MovieSetsController < ApplicationController
     redirect_to movie_set_path(@movie_set), alert: "You added a new show!"
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   def movie_set_params

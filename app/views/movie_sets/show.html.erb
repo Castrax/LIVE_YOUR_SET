@@ -59,24 +59,24 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="card booking-card">
-          <div class="booking-card-item booking-card-title">
-            <p style="text-transform: uppercase;"><strong><em><%= @movie_set.title %></strong></em></p>
-          </div>
-          <div class="booking-card-item booking-card-price-per-day">
-            <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
-          </div>
-<!--           <div class="booking-card-item booking-card-datepicker">
- -->            <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
-              <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
+      <% unless current_user == @movie_set.user %>
+        <div class="col-sm-4">
+          <div class="card booking-card">
+            <div class="booking-card-item booking-card-title">
+              <p style="text-transform: uppercase;"><strong><em><%= @movie_set.title %></strong></em></p>
+            </div>
+            <div class="booking-card-item booking-card-price-per-day">
+              <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
+            </div>
+            <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
+            <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
             <% end %>
-<!--           </div>
- -->          <div class="booking-card-item booking-card-total-price">
-            <p><strong>Total: <span id="total-price"></span>$</strong></p>
+            <div class="booking-card-item booking-card-total-price">
+              <p><strong>Total: <span id="total-price"></span>$</strong></p>
+            </div>
+            <%= link_to "Book", dashboard_path(@booking), class: "btn btn-flat btn-block mb-3" %>
           </div>
-          <%= link_to "Book", dashboard_path(@booking), class: "btn btn-flat btn-block mb-3" %>
-        </div>
+        <% end %>
       </div>
 
 
