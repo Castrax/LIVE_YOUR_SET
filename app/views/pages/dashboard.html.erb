@@ -1,29 +1,48 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <% @bookings.each do |booking| %>
-        <div class="card-dashboard">
-          <%= cl_image_tag booking.movie_set.photos.first.key %>
-          <div class="justify-dashboard">
-            <div class="card-dashboard-infos">
-              <h2><%= booking.movie_set.title %></h2>
-              <div class="infos">
-                <div class="dates">
-                  <p>Du <strong><%= booking.start_date %></strong> au <strong><%= booking.end_date %></strong></p>
-                  <span class="total_price"><%= booking.total_price %> €</span>
+  <div class="main">
+    <h2>Dashboard</h2>
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">My reservations</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      TO DO
+    </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="row">
+          <div class="col">
+            <% @bookings.each do |booking| %>
+              <div class="card-dashboard">
+                <%= cl_image_tag booking.movie_set.photos.first.key %>
+                <div class="justify-dashboard">
+                  <div class="card-dashboard-infos">
+                    <h2><%= booking.movie_set.title %></h2>
+                    <div class="infos">
+                      <div class="dates">
+                        <p>Du <strong><%= booking.start_date %></strong> au <strong><%= booking.end_date %></strong></p>
+                        <span class="total_price"><%= booking.total_price %> €</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="status">
+                    <% if booking.status == "upcoming" %>
+                      <span class="badge badge-secondary"><%= booking.status %></span>
+                    <% else %>
+                      <span class="badge badge-primary"><%= booking.status %></span>
+                    <% end %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="status">
-              <% if booking.status == "upcoming" %>
-                <span class="badge badge-secondary"><%= booking.status %></span>
-              <% else %>
-                <span class="badge badge-primary"><%= booking.status %></span>
-              <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
+

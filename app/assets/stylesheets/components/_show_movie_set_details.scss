@@ -1,47 +1,56 @@
-#show-movie-set-title {
-  // width: 1000px;
-}
-
-#show-movie-set-description {
-  // width: 1000px;
+#show-movie-set-address {
+  margin-bottom: 30px;
 }
 
 .fa-map-marked-alt {
-  margin-right: 30px;
-}
-
-
-.fas {
-  margin-bottom: 30px;
+  margin-right: 15px;
 }
 
 .fa-arrow-left {
   margin-left: 50px;
   margin-top: 30px;
-}
-
-.booking-card {
-  margin-left: 50px;
-  margin-top: 50px;
-
-}
-
-.box-description {
-  display: flex;
-  margin-bottom: 30px;
-  text-align: center;
-
-}
-
-.description-card {
-  margin-right: 30px;
-  width: 500px;
-  padding: 20px;
-  text-align: center;
-
+  color: $navy-blue-lys;
 }
 
 .description-icon {
   font-size: 2em;
+  margin-bottom: 30px;
+}
 
+.box-icon {
+  display: flex;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 800px;
+}
+
+.description-card {
+  margin-right: 70px;
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+
+.booking-card {
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  margin-left: 70px;
+}
+
+.search_dates {
+  width: 100% !important;
+}
+
+#search_dates {
+  width: 100% !important;
+}
+
+.booking-card-item {
+  padding: 20px;
+}
+
+.better-container {
+  margin: 0 200px;
 }

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'movie_sets/show'
   devise_for :users
   root to: 'pages#home'
-  resources :movie_sets, only: [:index, :show] do
+  resources :movie_sets, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
