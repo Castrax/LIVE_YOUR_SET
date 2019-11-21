@@ -35,9 +35,13 @@ class MovieSetsController < ApplicationController
   end
 
   def edit
+    @movie_set = MovieSet.find(params[:id])
   end
 
   def update
+    @movie_set = MovieSet.find(params[:id])
+    @movie_set.update(movie_set_params)
+    redirect_to movie_set_path(@movie_set)
   end
 
   private
