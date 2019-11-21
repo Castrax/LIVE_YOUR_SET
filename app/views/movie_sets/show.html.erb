@@ -64,14 +64,42 @@
           <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
         </div>
         <div class="p-2 my-3">
-          <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
-            <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
+          <%= simple_form_for [@movie_set, @booking] do |f| %>
+             <%= f.input :start_date, as: :string, required: false, placeholder: "From when?", input_html: {class: "datepicker", id:"start-date"} %>
+            <%= f.input :end_date, as: :string, required: false, placeholder: "To when?", input_html: {class: "datepicker", id:"end-date"} %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.submit "add a review", class: "btn btn-primary" %>
           <% end %>
+          <%#= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
+            <%#= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
+          <%# end %>
           <div class="p-2 mt-3">
             <p><strong>Total: <span id="total-price"></span>$</strong></p>
           </div>
+        <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModalCenter">
+          Book
+        </button>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">YOUR BOOKING</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p style="text-transform: uppercase;"><strong><%= @movie_set.title %></strong></p>
+                <p><%= @movie_set.address %></p>
+                <p id="reservation-days"></p>
+              </div>
+              <div class="modal-footer justify-content-center">
+                <%= link_to "Confirm", dashboard_path(@booking), class: "btn btn-flat" %>
+              </div>
+            </div>
+          </div>
         </div>
-        <%= link_to "Book", dashboard_path(@booking), class: "btn btn-primary btn-block mb-3" %>
+        </div>
       </div>
     </div>
   </div>
