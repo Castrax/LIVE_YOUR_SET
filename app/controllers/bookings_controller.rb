@@ -15,8 +15,7 @@ class BookingsController < ApplicationController
     @start_date = params[:booking][:start_date].to_date
     @total_price = ((@end_date - @start_date) * @price_per_day).to_i
     @booking.total_price = @total_price
-    raise
-    if @booking.save
+    if @booking.save!
       redirect_to dashboard_path
     else
       redirect_to movie_set_path(params[:movie_set_id].to_i)
@@ -26,6 +25,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :user_id, :status)
   end
 end
