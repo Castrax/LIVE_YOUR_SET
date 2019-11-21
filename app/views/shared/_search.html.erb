@@ -1,0 +1,12 @@
+<%= simple_form_for :search, url: movie_sets_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <% if params[:search] %>
+      <input class="form-control string required" type="text" id="search_query" value="<%= params[:search][:query] %>" />
+      <% else %>
+      <input class="form-control string required" type="text" id="search_query" value=" <%= params[:query] %>" />
+    <% end %>
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>

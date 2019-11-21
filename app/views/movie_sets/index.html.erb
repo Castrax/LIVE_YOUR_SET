@@ -1,7 +1,10 @@
 <div class="container">
   <div class="main">
-    <div class="divider">
-      <h2>You have <span> <%= @movie_sets.count %> </span> results</h2>
+    <div class="search-index">
+      <%= render 'shared/search' %>
+    </div>
+    <div class="results">
+      <p>You have <strong><%= @movie_sets.count %></strong> results</p>
     </div>
     <div class="content">
       <div class="cards">

@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+a {
+  color: $navy-blue-lys;
+}
+
+a:hover {
+  text-decoration:none;
+  color: $navy-blue-lys;
+}
+
+img {
+    object-fit: cover;
+}

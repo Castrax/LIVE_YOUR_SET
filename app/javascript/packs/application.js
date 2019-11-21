@@ -30,7 +30,6 @@ string_start_date.addEventListener("change", range =>{
 });
 }
 
-
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();

@@ -19,3 +19,77 @@
 .cancel-account {
   padding: 2rem 0;
 }
+
+.col-new {
+  background: white;
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.new-set {
+  padding-top : 2rem;
+  position: relative;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $navy-blue-lys;
+  border-color: $navy-blue-lys;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: $navy-blue-lys;
+}
+
+.form-group {
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.set_details h2 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.set_charact h2 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.bubble1 {
+  width: 70px;
+  height: 70px;
+  background-color: aquamarine;
+  border-radius: 50px;
+  position: absolute;
+  top: 12px;
+  right: 959px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.bubble2 {
+  width: 70px;
+  height: 70px;
+  background-color: aquamarine;
+  border-radius: 50px;
+  position: absolute;
+  top: 430px;
+  right: 959px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
