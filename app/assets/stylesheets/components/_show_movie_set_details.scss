@@ -6,24 +6,28 @@
   // width: 1000px;
 }
 
-.fa-map-marked-alt {
-  margin-right: 30px;
+.fas {
+  // margin-bottom: 30px;
 }
 
-
-.fas {
-  margin-bottom: 30px;
+.fa-map-marked-alt {
+  margin-right: 30px;
 }
 
 .fa-arrow-left {
   margin-left: 50px;
   margin-top: 30px;
+  color: $navy-blue-lys;
 }
 
-.booking-card {
-  margin-left: 50px;
-  margin-top: 50px;
+.fa-heart {
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
 
+.description-icon {
+  font-size: 2em;
+  margin-bottom: 30px;
 }
 
 .box-description {
@@ -34,14 +38,33 @@
 }
 
 .description-card {
-  margin-right: 30px;
+  margin-right: 70px;
   width: 500px;
   padding: 20px;
   text-align: center;
-
 }
 
-.description-icon {
-  font-size: 2em;
+.booking-card {
+  padding: 20px;
+  margin-left: 70px;
+  text-align: center;
+  position: fixed;
+}
+
+.booking-card-item {
+  padding: 20px;
+}
+
+.datepicker, input#search_date {
+  width: 100% !important;
+}
+
+.datedate .form-group {
+  width: 100% !important;
+}
+
+.contcont {
+  margin-left: 200px;
+  margin-right: 200px;
 
 }
