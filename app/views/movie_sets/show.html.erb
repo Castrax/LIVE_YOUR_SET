@@ -68,8 +68,14 @@
             <div class="booking-card-item booking-card-price-per-day">
               <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
             </div>
-            <%= simple_form_for :search, html: { class: 'form-inline' }, method: :get do |f| %>
-            <%= f.input :dates, label: false, placeholder: "When to when?", input_html: { class: "datepicker"} %>
+            <div class="p-2 my-3">
+              <%= simple_form_for [@movie_set, @booking] do |f| %>
+                <%= f.input :start_date, as: :string, required: false, placeholder: "From when?", input_html: {class: "datepicker", id:"start-date"} %>
+                <%= f.input :end_date, as: :string, required: false, placeholder: "To when?", input_html: {class: "datepicker", id:"end-date"} %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.hidden_field :status, value: "upcoming" %>
+                <%= f.submit "add a review", class: "btn btn-primary" %>
+              <% end %>
             <% end %>
             <div class="booking-card-item booking-card-total-price">
               <p><strong>Total: <span id="total-price"></span>$</strong></p>
