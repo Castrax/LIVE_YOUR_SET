@@ -31,7 +31,7 @@ class MovieSetsController < ApplicationController
     @movie_set = MovieSet.new(movie_set_params)
     @movie_set.user_id = current_user.id
     @movie_set.save
-    redirect_to movie_set_path(@movie_set), alert: 'Well done !'
+    redirect_to movie_set_path(@movie_set), alert: "You added a new show!"
   end
 
   private
