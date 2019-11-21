@@ -1,17 +1,9 @@
-#show-movie-set-title {
-  // width: 1000px;
-}
-
-#show-movie-set-description {
-  // width: 1000px;
-}
-
-.fas {
-  // margin-bottom: 30px;
+#show-movie-set-address {
+  margin-bottom: 30px;
 }
 
 .fa-map-marked-alt {
-  margin-right: 30px;
+  margin-right: 15px;
 }
 
 .fa-arrow-left {
@@ -20,21 +12,16 @@
   color: $navy-blue-lys;
 }
 
-.fa-heart {
-  margin-bottom: 30px;
-  margin-right: 30px;
-}
-
 .description-icon {
   font-size: 2em;
   margin-bottom: 30px;
 }
 
-.box-description {
+.box-icon {
   display: flex;
   margin-bottom: 30px;
   text-align: center;
-
+  width: 800px;
 }
 
 .description-card {
@@ -46,25 +33,24 @@
 
 .booking-card {
   padding: 20px;
-  margin-left: 70px;
   text-align: center;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  margin-left: 70px;
+}
+
+.search_dates {
+  width: 100% !important;
+}
+
+#search_dates {
+  width: 100% !important;
 }
 
 .booking-card-item {
   padding: 20px;
 }
 
-.datepicker, input#search_date {
-  width: 100% !important;
-}
-
-.datedate .form-group {
-  width: 100% !important;
-}
-
-.contcont {
-  margin-left: 200px;
-  margin-right: 200px;
-
+.better-container {
+  margin: 0 200px;
 }
