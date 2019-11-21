@@ -10,7 +10,6 @@
             <%= cl_image_tag photo.key, class: "d-block w-100", style: "height: 400px;" %>
           </div>
         <% end %>
-
       </div>
       <a class="carousel-control-prev" href="#carousel-show-movie-set" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -23,65 +22,60 @@
     </div>
   </div>
 </div>
-<div class="better-container">
-    <div class="row">
-      <div class="col-sm-8">
-        <div id="show-movie-set-title">
-          <h1><%= @movie_set.title.capitalize %></h1>
-        </div>
-        <div id="show-movie-set-media-name">
-          <p><i class="fas fa-film"></i><%=  @movie_set.media_name %></p>
-        </div>
-        <div id="show-movie-set-address">
-          <p><i class="fas fa-map-marked-alt"></i><%=  @movie_set.address %></p>
-        </div>
 
-        <div class="container box-icon">
-          <div class="card description-card">
-              <i class="fas fa-user-friends description-icon"></i>
-            <p>max 1500 people</p>
+<div class="better-container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div id="show-movie-set-title">
+        <h1><%= @movie_set.title.capitalize %></h1>
+      </div>
+      <div id="show-movie-set-media-name">
+        <p><i class="fas fa-film"></i><%=  @movie_set.media_name %></p>
+      </div>
+      <div id="show-movie-set-address">
+        <p><i class="fas fa-map-marked-alt"></i><%=  @movie_set.address %></p>
+      </div>
+      <div class="container box-icon">
+        <div class="card description-card">
+          <i class="fas fa-user-friends description-icon"></i>
+          <p>max 1500 people</p>
         </div>
         <div class="card description-card">
-          <p>
-            <i class="fas fa-ruler-combined description-icon"></i>
-          </p>
+          <i class="fas fa-ruler-combined description-icon"></i>
           <p>3000 square meters</p>
         </div>
         <div class="card description-card">
-          <p>
-            <i class="fas fa-parking description-icon"></i>
-          </p>
+          <i class="fas fa-parking description-icon"></i>
           <p>Free parking</p>
         </div>
-        </div>
-        <div id="show-movie-set-description">
-          <p><%= @movie_set.description %></p>
-        </div>
       </div>
-
-      <% unless current_user == @movie_set.user %>
-        <div class="col-sm-4">
-          <div class="card booking-card">
-            <div class="booking-card-item booking-card-title">
-              <p style="text-transform: uppercase;"><strong><em><%= @movie_set.title %></strong></em></p>
-            </div>
-            <div class="booking-card-item booking-card-price-per-day">
-              <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
-            </div>
-            <div class="p-2 my-3">
-              <%= simple_form_for [@movie_set, @booking] do |f| %>
-                <%= f.input :start_date, as: :string, required: false, placeholder: "From when?", input_html: {class: "datepicker", id:"start-date"} %>
-                <%= f.input :end_date, as: :string, required: false, placeholder: "To when?", input_html: {class: "datepicker", id:"end-date"} %>
-                <%= f.hidden_field :user_id, value: current_user.id %>
-                <%= f.hidden_field :status, value: "upcoming" %>
-                <%= f.submit "add a review", class: "btn btn-primary" %>
-              <% end %>
+      <div id="show-movie-set-description">
+        <p><%= @movie_set.description %></p>
+      </div>
+    </div>
+    <% unless current_user == @movie_set.user %>
+      <div class="col-sm-4">
+        <div class="card booking-card">
+          <div class="booking-card-item booking-card-title">
+            <p style="text-transform: uppercase;"><strong><em><%= @movie_set.title %></strong></em></p>
+          </div>
+          <div class="booking-card-item booking-card-price-per-day">
+            <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
+          </div>
+          <div class="p-2 my-3">
+            <%= simple_form_for [@movie_set, @booking] do |f| %>
+              <%= f.input :start_date, as: :string, required: false, placeholder: "From when?", input_html: {class: "datepicker", id:"start-date"} %>
+              <%= f.input :end_date, as: :string, required: false, placeholder: "To when?", input_html: {class: "datepicker", id:"end-date"} %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :status, value: "upcoming" %>
+                <div class="booking-card-item booking-card-total-price">
+                  <p><strong>Total: <span id="total-price"></span>$</strong></p>
+                </div>
+              <%= f.submit "Book", class: "btn btn-flat btn-review" %>
             <% end %>
-            <div class="booking-card-item booking-card-total-price">
-              <p><strong>Total: <span id="total-price"></span>$</strong></p>
-            </div>
-            <%= link_to "Book", dashboard_path(@booking), class: "btn btn-flat btn-block mb-3" %>
           </div>
       </div>
-
+    <% end %>
+  </div>
+</div>
 
