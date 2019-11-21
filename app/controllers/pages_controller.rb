@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @bookings = @user.bookings
+    @movie_sets = MovieSet.where(user_id: @user.id)
   end
 end
