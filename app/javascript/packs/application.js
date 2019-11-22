@@ -30,6 +30,20 @@ string_start_date.addEventListener("change", range =>{
 });
 }
 
+if (document.querySelector("#button-continue-container a")) {
+  const myBtn = document.querySelector("#button-continue-container a");
+  myBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  showDiv();
+  myBtn.style.display = "none";
+});
+}
+
+function showDiv() {
+  document.querySelector('.set_charact').style.display = "block";
+  document.querySelector('.set_charact').classList.add('animated', 'fadeIn', 'delay-2s');
+}
+
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();

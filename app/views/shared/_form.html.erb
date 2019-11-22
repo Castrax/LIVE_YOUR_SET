@@ -1,17 +1,20 @@
 <%= simple_form_for @movie_set, defaults: { input_html: { class: 'form-row' } } do |f| %>
   <div class="set_details">
      <div class="bubble1">1</div>
-       <h2>Your set</h2>
+       <h3>Your set</h3>
     <%= f.input :title, input_html: { class: 'form-control' } %>
     <%= f.input :description, input_html: { maxlength: 500 } %>
     <%= f.input :media_name %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   </div>
-  <div class="set_charact">
+  <div id="button-continue-container" class="button-continue">
+    <%= link_to "Continue", {id: "continue-btn", class: "btn btn-primary"} %>
+  </div>
+  <div class="set_charact" style="display: none;">
       <div class="bubble2">2</div>
-       <h2>Characteristics</h2>
+       <h3>Characteristics</h3>
     <%= f.input :address %>
     <%= f.input :price_per_day %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= f.button :submit, class: 'btn btn-primary', style:"margin-left: 14.5%" %>
   </div>
 <% end %>
