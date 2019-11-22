@@ -7,7 +7,7 @@
         <a class="nav-link active tab-link-custom" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">My movie sets</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link tab-link-custom" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">My booking</a>
+        <a class="nav-link tab-link-custom" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">My bookings</a>
       </li>
       <hr />
     </ul>
@@ -43,35 +43,48 @@
         </div>
     </div>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class="row">
-          <div class="col">
-            <% @bookings.each do |booking| %>
-              <div class="card-dashboard">
-                <%= cl_image_tag booking.movie_set.photos.first.key %>
-                <div class="justify-dashboard">
-                  <div class="card-dashboard-infos">
-                    <h2><%= booking.movie_set.title %></h2>
-                    <div class="infos">
-                      <div class="dates">
-                        <p>Du <strong><%= booking.start_date %></strong> au <strong><%= booking.end_date %></strong></p>
-                        <span class="total_price"><%= booking.total_price %> €</span>
-                      </div>
-                    </div>
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="line">
+            <div class="movies">
+              <% @bookings.each do |booking| %>
+                <% if booking.status == "upcoming" %>
+                  <div class="card" style="width: 18rem;">
+                  <div class="status" style="position: absolute; border-radius: 4px; margin-top: -7px;">
+                    <span class="badge badge-secondary"><%= booking.status %></span>
                   </div>
-                  <div class="status">
-                    <% if booking.status == "upcoming" %>
-                      <span class="badge badge-secondary"><%= booking.status %></span>
-                    <% else %>
-                      <span class="badge badge-primary"><%= booking.status %></span>
-                    <% end %>
+                    <%= cl_image_tag booking.movie_set.photos.first.key, class: "card-img-top", style: "background: linear-gradient(rgba(230,230,230,0.1), rgba(230,230,230,0.1))"%>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= booking.movie_set.title %></h5>
+                      <p class="card-text py-3">Here are the details concerning your reservation.</p>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><i class="fas fa-film"></i><strong><%= booking.start_date %> <span> - </span> <%= booking.end_date %></strong></li>
+                      <li class="list-group-item"><i class="fas fa-coins pr-3"></i><strong><%= booking.total_price %><span> $ </span></strong></li>
+                    </ul>
                   </div>
                 </div>
+              <% else %>
+                <div class="card" style="width: 18rem; background: rgb(230, 230, 230);">
+                <div class="status" style="position: absolute; border-radius: 4px; margin-top: -7px;">
+                  <span class="badge badge-primary"><%= booking.status %></span>
+                </div>
+                  <%= cl_image_tag booking.movie_set.photos.first.key, class: "card-img-top", style: "background: linear-gradient(rgba(230,230,230,0.1), rgba(230,230,230,0.1))"%>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= booking.movie_set.title %></h5>
+                    <p class="card-text py-3">Here are the details concerning your reservation.</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background: rgb(230, 230, 230);"><i class="fas fa-film"></i><strong><%= booking.start_date %> <span> - </span> <%= booking.end_date %></strong></li>
+                    <li class="list-group-item" style="background: rgb(230, 230, 230);"><i class="fas fa-coins pr-3"></i><strong><%= booking.total_price %><span> $ </span></strong></li>
+                  </ul>
+                </div>
               </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
-        </div>
       </div>
+    <% end %>
     </div>
   </div>
+  </div>
 </div>
+
 
