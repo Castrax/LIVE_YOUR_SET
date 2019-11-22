@@ -53,23 +53,18 @@
     <% unless current_user == @movie_set.user %>
       <div class="col-4">
         <div class="card booking-card">
-          <div class="booking-card-item booking-card-title">
-            <p style="text-transform: uppercase;"><strong><em><%= @movie_set.title %></strong></em></p>
-          </div>
           <div class="booking-card-item booking-card-price-per-day">
-            <p><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</p>
-          </div>
-          <div class="p-2 my-3">
-            <%= simple_form_for [@movie_set, @booking] do |f| %>
-              <%= f.input :start_date, as: :string, required: false, placeholder: "From when?", input_html: {class: "datepicker", id:"start-date"} %>
-              <%= f.input :end_date, as: :string, required: false, placeholder: "To when?", input_html: {class: "datepicker", id:"end-date"} %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
-              <%= f.hidden_field :status, value: "upcoming" %>
-                <div class="booking-card-item booking-card-total-price">
-                  <p><strong>Total: <span id="total-price"></span>$</strong></p>
-                </div>
-              <%= f.submit "Book", class: "btn btn-flat btn-review" %>
-            <% end %>
+            <strong><span id="price-per-day"><%= @movie_set.price_per_day %></span>$ / day</strong>
+              <%= simple_form_for [@movie_set, @booking] do |f| %>
+                <%= f.input :start_date, as: :string, required: false, placeholder: "From when?", input_html: {class: "datepicker", id:"start-date"} %>
+                <%= f.input :end_date, as: :string, required: false, placeholder: "To when?", input_html: {class: "datepicker", id:"end-date"} %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.hidden_field :status, value: "upcoming" %>
+                  <div class="booking-card-total-price">
+                    <p><strong>Total Price: <span id="total-price"></span>$</strong></p>
+                  </div>
+                <%= f.submit "Book", class: "btn btn-flat btn-review" %>
+              <% end %>
           </div>
       </div>
     <% end %>
