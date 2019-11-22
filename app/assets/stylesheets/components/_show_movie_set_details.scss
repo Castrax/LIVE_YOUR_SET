@@ -2,13 +2,18 @@
   margin-bottom: 30px;
 }
 
+#show-movie-set-description {
+  margin-right: 3rem;
+  text-align: justify;
+}
+
 .fa-map-marked-alt {
   margin-right: 15px;
 }
 
 .fa-arrow-left {
-  margin-left: 50px;
   margin-top: 30px;
+  margin-right: 5px;
   color: $navy-blue-lys;
 }
 
@@ -20,23 +25,21 @@
 .box-icon {
   display: flex;
   margin-bottom: 30px;
+  padding: 0;
   text-align: center;
-  width: 800px;
+  justify-content: flex-start;
 }
 
 .description-card {
-  margin-right: 70px;
-  width: 500px;
   padding: 20px;
   text-align: center;
+  width: 150px;
+  margin-right: 2rem;
 }
 
 .booking-card {
-  padding: 20px;
-  text-align: center;
   position: sticky;
   top: 0;
-  margin-left: 70px;
 }
 
 .search_dates {
@@ -52,9 +55,15 @@
 }
 
 .better-container {
-  margin: 0 200px;
+  margin: 0 100px;
 }
 
 .btn-review {
   width: 100%;
+}
+
+.booking-card-total-price {
+  border-top: thin solid lightgray;
+  padding: 1rem 0rem;
+  margin-top: 3rem;
 }
