@@ -13,7 +13,6 @@
   width: 100%;
 }
 
-/*needed for old page, remove after merge of new frontend module*/
 #gmap_map {
   flex: 0 0 450px;
   height: 100vh;
@@ -29,7 +28,7 @@
     grid-template-columns: 1fr;
   }
   #map {
-    display: none;
+    display: block;
   }
 }
 
@@ -39,7 +38,7 @@
     grid-template-columns: 1fr 1fr;
   }
   #map {
-    display: none;
+    display: block;
   }
 }
 
